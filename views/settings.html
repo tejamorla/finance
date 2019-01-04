@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="page-title">
+            <!--<h2>members<small>  Overview</small></h2>-->
+			<div class="well clearfix">
+				<div class="fa fa-users"></i> <a href="#!home">Home</a> > Settings</div>
+				<div class="pull-right">
+                    <button type="button" class="btn btn-sm btn-success" ng-click="updateSetings()">
+                          <i class="glyphicon glyphicon-plus"></i> Edit Owner
+                     </button>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-12 text-left pull-left">
+                    <h3 class="panel-title">Site Settings</h3>
+                </div>
+               
+            </div>
+		</div>
+		<div class="panel-body">
+			<div class=" col-md-12 col-lg-12 ">
+				<table class="table table-user-information">
+					<tbody >
+						<tr>
+							<td>Site name:</td>
+							<td>{{owner.Sitename}}</td>
+						</tr>
+						<tr>
+							<td>Owner Name:</td>
+							<td>{{owner.OwnerName}}</td>
+						</tr>
+						<tr>
+							<td>Mobile:</td>
+							<td>{{owner.Mobile}}</td>
+						</tr>
+						<tr>
+							<td>Locality:</td>
+							<td>{{owner.Locality}}</td>
+						</tr>
+						
+						<tr>
+							<td>City:</td>
+							<td>{{owner.City}}</td>
+						</tr>
+						<tr>
+							<td>State:</td>
+							<td>{{owner.State}}</td>
+						</tr>
+						<tr>
+							<td>Adress:</td>
+							<td>{{owner.Address}}</td>
+						</tr>
+						<tr>
+							<td>PinCode:</td>
+							<td>{{owner.PinCode}}</td>
+						</tr>
+						
+						
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+</div>
+	
+	
+	
+	

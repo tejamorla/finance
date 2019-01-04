@@ -1,0 +1,87 @@
+ <form name="ownerForm"  novalidate autocomplete="off">
+  <div class="col-md-12">
+			<div class="form-group">
+				<label>Site Name</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-globe"></i>
+				  </span>
+				  <input type="text" name="site_name" id="site_name" ng-model="owner.Sitename" class="form-control" placeholder="Site Name"  required>
+				  
+				</div>
+				<span style="color:red" ng-show="ownerForm.site_name.$touched && ownerForm.site_name.$invalid" class="help-block">Site Name is required.</span>
+			</div>
+			<div class="form-group">
+				<label>Name</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-globe"></i>
+				  </span>
+				  <input type="text" name="name" id="name" ng-model="owner.OwnerName" class="form-control" placeholder="Full Name"  required>
+				  
+				</div>
+				<span style="color:red" ng-show="ownerForm.name.$touched && ownerForm.name.$invalid" class="help-block">Name is required.</span>
+			</div>
+			<div class="form-group">
+				<label>Mobile</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-earphone"></i>
+				  </span>
+				  <input type="text" class="form-control" name="phone" id="phone"  ng-minlength="10" ng-maxlength="10" placeholder="Mobile" ng-maxlength="10" ng-model="owner.Mobile"  ng-pattern="/^[7-9][0-9]{9}$/" required>
+				</div>
+				<span  style="color:red" ng-show="ownerForm.phone.$error.maxlength && !ownerForm.phone.$pristine" class="help-block">phone number should be 10 digits.</span>
+				<span style="color:red" ng-show="ownerForm.phone.$error.pattern &&  ownerForm.phone.$dirty " class="help-block">Please enter valid number.</span>
+				<span style="color:red" ng-show="ownerForm.phone.$touched && ownerForm.phone.$invalid" class="help-block">Mobile number required.</span>
+			</div>
+			<div class="form-group">
+				<label>Locality</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-map-marker"></i>
+				  </span>
+				  <input type="text" class="form-control" name="locality" id="locality" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Locality" ng-model="owner.Locality" required>
+				</div>
+				<span style="color:red"  ng-show="ownerForm.locality.$touched && ownerForm.locality.$invalid" class="help-block">locality is required.</span>
+				<span style="color:red" ng-show="ownerForm.locality.$error.pattern &&  ownerForm.locality.$dirty " class="help-block">locality must be letters.</span>
+			</div>
+			<div class="form-group">
+				<label>City</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-home"></i>
+				  </span>
+				  <input type="text" class="form-control" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="City" name="city" id="city" ng-model="owner.City" required>
+				</div>
+				<span style="color:red" ng-show="userForm.city.$error.pattern &&  userForm.city.$dirty " class="help-block">City must be letters.</span>
+				<span  ng-show="ownerForm.city.$touched && ownerForm.city.$invalid" style="color:red" class="help-block">locality is required.</span>
+				
+			</div>
+			<div class="form-group">
+				<label>State</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-globe"></i>
+				  </span>
+				  <input type="text" class="form-control" name="state" id="state" placeholder="State" ng-model="owner.State" ng-pattern="/^[a-zA-Z\s]*$/" required>
+				</div>
+				<span ng-show="ownerForm.state.$touched && ownerForm.state.$invalid" style="color:red" class="help-block">state is required.</span>
+				<span style="color:red" ng-show="ownerForm.state.$error.pattern &&  ownerForm.state.$dirty " class="help-block">state must be letters.</span>
+			</div>
+			<div class="form-group">
+				<label>Address</label>
+				<div class="input-group">
+				  <span class="input-group-addon">
+					  <i class="glyphicon glyphicon-map-marker"></i>
+				  </span>
+				  <input type="text" class="form-control" name="address" id="address" ng-pattern="/^[a-zA-Z\s]*$/" placeholder="Locality" ng-model="owner.Address" required>
+				</div>
+				<span style="color:red"  ng-show="ownerForm.address.$touched && ownerForm.address.$invalid" class="help-block">adress is required.</span>
+				<span style="color:red" ng-show="ownerForm.address.$error.pattern &&  ownerForm.address.$dirty " class="help-block">locality must be Address.</span>
+			</div>
+		
+  </div>
+  <div class="clearfix"></div>
+<a href="#/settings" class="btn btn-default">Close</a>
+<button type="submit" ng-disabled="ownerForm.$invalid" class="btn btn-success" ng-click="ownerForm.$valid && save(owner)">save</button>
+</form>
