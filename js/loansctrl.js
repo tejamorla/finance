@@ -26,23 +26,55 @@ app.controller("loanctrl",["$scope","$routeParams", "$location","LoanService",fu
 			return false;
 		};
 	};
-	
+	$scope.view = function(){
+		 jq('#viewLoanInstallmentsModal').modal('show');
+	}
+	$scope.addInstallment = function(){
+		jq('#viewLoanInstallmentsModal').modal('hide');
+		jq('#addLoanInstallmentsModal').modal('show');
+
+	}
+	$scope.create = function(){
+		LoanService.save( $scope.loanlist);
+		jq('#addLoanInstallmentsModal').modal('hide');
+	}
     $scope.viewloan = function(loanmember){
 			$scope.mem = loanmember;
 			jq('#persondata').modal({show:true});
 		};
+		$scope.modify = function(id){
+
+				$scope.modifyField = true;
+				$scope.viewField = true;
+				$scope.instId = id;
+			};
+
+
+			$scope.update = function(inst){
+				$scope.modifyField = false;
+				$scope.viewField = false;
+			};
 	$scope.members =[
 					  	{id:1,completed: true, name: 'Teja', loans: "2" , amount:"50000",loantype:"daily",locality:"kavali",city:"kavali",state:"ap",phone:"8499890339"},
 						{id:2,completed: true, name: 'ravi', loans: "0" , amount:"0",locality:"kavali",city:"kavali",state:"ap",phone:"9553771990"},
 						{id:3,completed: true, name: 'rrr', loans: "2" , amount:"50000",locality:"nellore",city:"kavali",state:"ap",phone:"8499890339"},
 						{id:4,completed: true, name: 'abc', loans: "2" , amount:"50000",locality:"nellore",city:"kavali",state:"ap",phone:"8499890339"}
 					];
+	$scope.installments =[
+							{id:1,date:"2018-12-3",amount:"200",status:"paid"},
+							{id:2,date:"2018-11-3",amount:"400",status:"pending"},
+							{id:3,date:"2018-10-3",amount:"300",status:"paid"}
+	];
+
 	$scope.sort = {       
 					sortingOrder : 'name',
 					reverse : false
 				};
 				 $scope.orderByMe = function(x){
 		$scope.myOrderBy = x;
+	}
+	$scope.create = function{
+	
 	}
 }]);
 app.directive("loanSort", function() {
@@ -84,3 +116,11 @@ app.directive("loanSort", function() {
 		}
 
 	});
+
+app.directive('addInstallment', function () {
+return {
+restrict: 'E',
+scope: false,
+templateUrl: '../views/addInstallment.html'
+}
+});

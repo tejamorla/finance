@@ -31,10 +31,13 @@ $routeProvider
 }).when("/settings",{
 		templateUrl:"views/settings.html",
 		controller:"ownerctrl"
-}).when("/editowner",{
-		templateUrl:"views/settings.html",
-		controller:"ownerctrl"
 })
         .otherwise({ redirectTo: "/home" });
 });
+
+
+           
+               
+           
+
 

@@ -1,0 +1,69 @@
+
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+			<h4 class="modal-title">New Installment</h4>
+		  </div>
+		  <div class="modal-body">
+			  <div class="col-md-12">
+				  <form class="form-horizontal ng-pristine ng-valid">
+						<div class="form-group">
+							<label>Member Name</label>
+							<div class="input-group">
+							  <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-user"></i>
+							  </span>							  
+							  <input type="text" class="form-control" value="{{mem.name}}" readonly="">
+							
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Loan Type</label>
+							<div class="input-group">
+							  <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-briefcase"></i>
+							  </span>							  
+							  <input type="text" class="form-control" value="{{mem.loantype}}" readonly="">
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Loan Number</label>
+							<div class="input-group">
+							  <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-briefcase"></i>
+							  </span>							  
+							  <input type="text" class="form-control" value="Loan-123" readonly="">
+							
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Date</label>
+							<div class="input-group">
+							  <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-calendar"></i>
+							  </span>
+							  <input type="date" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Date" ng-model="Fax">
+							</div>
+						</div>
+						<div class="form-group">
+							<label>Amount Paid</label>
+							<div class="input-group">
+							  <span class="input-group-addon">
+								  <i class="glyphicon glyphicon-usd"></i>
+							  </span>
+							  <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="Amount Issued" ng-model="Phone">
+							</div>
+						</div>
+						
+						
+					</form>
+			  </div>
+			  <div class="clearfix"></div>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			<input type="button" class="btn btn-success" ng-click="create()" value="Save">
+		  </div>
+		</div><!-- /.modal-content -->
+	  
+	  

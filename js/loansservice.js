@@ -1,7 +1,7 @@
 app.service ("LoanService",function(){
 	var loanservice ={};
-	loanservice.loanslist = [{id:1,completed: true ,name: 'Member1', loantype: 'Daily', issudedate: '2017-12-01',amount : 50000, interest:5000, total_amount:55000, paid_amount:50000, discount:3000, pending_amount:2000, status:'Pending', payment_date:'2018-02-01', locality:'Lakshmipuram'},
-							{id:1,completed: true ,name: 'Member2', loantype: 'Weekly', issudedate: '2018-12-01',amount : 0, interest:500, total_amount:6000, paid_amount:5000, discount:3000, pending_amount:200, status:'Paid', payment_date:'2018-02-01', locality:'Kavali'}
+	loanservice.loanslist = [{id:1,completed: true ,name: 'Member1',loan_period:"30days", loantype: 'Daily', issudedate: '2017-12-01',amount : 50000, interest:5000, total_amount:55000, paid_amount:50000, discount:3000, pending_amount:2000, issude_amount:30000,status:'Pending', payment_date:'2018-02-01', locality:'Lakshmipuram'},
+							{id:1,completed: true ,name: 'Member2', loantype: 'Weekly', issudedate: '2018-12-01',amount : 0, issude_amount:50000,interest:500, total_amount:6000,loan_period:"30days", paid_amount:5000, discount:3000, pending_amount:200, status:'Paid', payment_date:'2018-02-01', locality:'Kavali'}
 							];
 	loanservice.findById = function(id){
         for(var item in loanservice.loanslist){

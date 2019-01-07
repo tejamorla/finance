@@ -10,13 +10,16 @@ app.controller("membersctrl",["$scope","$routeParams", "$location","MembersServi
 	}
 	 $scope.save = function(){
         MembersService.save( $scope.memberlist);
+        jq('#addMember').modal('hide');
         $location.path("/members");
     }
-    $scope.editMember = function(id){
-        $location.path("additem/edit/"+id);
-        jq('#memberModal').modal('hide');
+    $scope.editMember = function(member){
+        $scope.memberlist = member;
+        jq('#addMember').modal('show');
     }
-    
+    $scope.newmember = function(){
+    	jq('#addMember').modal('show');
+    }
 	$scope.viewMember = function(member){
 			$scope.mem = member;
 			jq('#memberModal').modal('show');
