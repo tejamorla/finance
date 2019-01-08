@@ -73,9 +73,9 @@ app.controller("loanctrl",["$scope","$routeParams", "$location","LoanService",fu
 				 $scope.orderByMe = function(x){
 		$scope.myOrderBy = x;
 	}
-	$scope.create = function{
+	/*$scope.create = function{
 	
-	}
+	}*/
 }]);
 app.directive("loanSort", function() {
 		return {
