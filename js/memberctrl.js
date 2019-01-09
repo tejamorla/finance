@@ -18,6 +18,7 @@ app.controller("membersctrl",["$scope","$routeParams", "$location","MembersServi
         jq('#addMember').modal('show');
     }
     $scope.newmember = function(){
+    	$scope.memberlist = "";
     	jq('#addMember').modal('show');
     }
 	$scope.viewMember = function(member){

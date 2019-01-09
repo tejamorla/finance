@@ -73,8 +73,13 @@ app.controller("loanctrl",["$scope","$routeParams", "$location","LoanService",fu
 				 $scope.orderByMe = function(x){
 		$scope.myOrderBy = x;
 	}
-	$scope.create = function{
-	
+	$scope.create = function(){
+		$scope.installments .push({
+                    date:$scope.date, 
+                    amount:$scope.amount 
+                });
+		jq('#addLoanInstallmentsModal').modal('hide');
+		jq('#viewLoanInstallmentsModal').modal('show');
 	}
 }]);
 app.directive("loanSort", function() {
