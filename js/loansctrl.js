@@ -26,7 +26,8 @@ app.controller("loanctrl",["$scope","$routeParams", "$location","LoanService",fu
 			return false;
 		};
 	};
-	$scope.view = function(){
+	$scope.view = function(loanmember){
+		 $scope.loanmember = loanmember;
 		 jq('#viewLoanInstallmentsModal').modal('show');
 	}
 	$scope.addInstallment = function(){

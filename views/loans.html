@@ -58,7 +58,7 @@
 							<td>
                                         <button class="btn btn-success" ng-click="editloan(loanmember)"><em class="fa fa-pencil"></em></button>
                                         <button class="btn btn-danger" ng-click="removeLoan(loanmember.id)"><em class="fa fa-trash"></em></button>
-                                        <button class="btn btn-default" ng-click="view()" style="border-radius: 25px"><em class="fa fa-info"></em></button>
+                                        <button class="btn btn-default" ng-click="view(loanmember)" style="border-radius: 25px"><em class="fa fa-info"></em></button>
                                     </td>
 							<td ><a data-toggle="modal"ng-click="viewloan(loanmember)">{{loanmember.name}}</a></td>
 							<td>{{loanmember.loantype}}</td>
@@ -261,7 +261,34 @@
 		  </div>
 		  <div class="modal-body">
 			  <div class="col-md-12">
-
+			  		<table class="table table-striped table-bordered table-hover">
+					<thead>
+						<tr>
+							
+							<th>Name</th>
+							<th>Loan Type</th>
+							
+							<th>Issude Date</th>
+							
+							<th>Total Amount</th>
+							<th>Status</th>
+							<th>Locality</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							
+							<td ><a data-toggle="modal"ng-click="viewloan(loanmember)">{{loanmember.name}}</a></td>
+							<td>{{loanmember.loantype}}</td>
+							
+							<td>{{loanmember.issudedate | date}}</td>
+							
+							<td>{{loanmember.total_amount |currency:"&#8377;"}}</td>
+							<td>{{loanmember.status}}</td>
+							<td>{{loanmember.locality}}</td>
+						</tr>
+					</tbody>
+				</table>
 				   <div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover">
 							<thead>

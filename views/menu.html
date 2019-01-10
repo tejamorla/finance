@@ -69,7 +69,7 @@
 
 
 
-            <nav class="navbar navbar-inverse   navbar-expand-xl navbar-dark">
+            <nav class="navbar navbar-inverse   navbar-expand-xl navbar-dark" ng-controller="ownerctrl">
             	<div class="navbar-header">
 						<a class="navbar-brand" href="#home" style="font-size: 23px;font-weight: bolder;"><i class="fa fa-briefcase"></i>Annapoorneswari Finance</a>
 						<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
@@ -86,19 +86,37 @@
 							<li class="nav-item"><a class="nav-link" href="#members"> <i class="fa fa-user"></i><span>Members</a></li>
 								<li class="nav-item"><a class="nav-link" href="#loans"> <i class="fa fa-bank"></i><span>Loans</a></li>
 							<li class="nav-item"><a class="nav-link" href="#settings"> <i class="fa fa-gears"></i><span>Settings</a></li>
-														<li class="dropdown nav-item" style="margin-top:31px">
+								<li class="dropdown nav-item">
 								<a href="" class="nav-link dropdown-toggle user-action" data-toggle="dropdown">
-									Amarnath
-								  <span><b class="caret"></b></span>
+								  <img src="images/user.png" width="35px" height="32px" class="avatar imgp" alt="Avatar" style="border-radius: 40px">
+								  <br>Amarnath
+								  <b class="caret"></b>
 								 </a>
-								<ul class="dropdown-menu">
-									<li> <a href="javascript:void(0);"  class="dropdown-item" style="color: black">Welcome Amarnath</a></li>
+								 <ul class="dropdown-menu">
+									<li> <a href="javascript:void(0);"  class="dropdown-item" style="color: black">
+
+									Welcome Amarnath</a></li>
 									<li class="divider dropdown-divider"></li>
-									<li><a href="javascript:void(0);"  class="dropdown-item" style="color: black">About</a></li>
+									<li><a ng-click="about()"  class="dropdown-item" style="color: black">About</a></li>
 								</ul>
-						</li>
+								</li>
+														
 						</ul>
 					</div>
+					<div id="about" class="modal fade" role="dialog">
+           <div class="modal-dialog">
+                <div class="modal-content">
+                   <div class="modal-header"><button type="button" class="close" data-dismiss="modal">×</button>
+                         <h4 class="modal-title">Reject Reason</h4>
+                   </div>
+                  
+                   <div class="modal-footer">
+                         <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        
+                   </div>
+                </div>
+          </div>
+        </div>
 </nav>
 
 <script>

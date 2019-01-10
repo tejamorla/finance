@@ -5,5 +5,8 @@ app.controller("ownerctrl",function($scope,$location){
 		  jq('#editownerModal').modal('show');
 		
 	}
+	$scope.about = function(){
+		jq('#about').modal('show');
+	}
 	
 });
