@@ -55,6 +55,13 @@
 .img-circle {
     border-radius: 50%;
 }
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 85px;
+}
 .glyphicon {
     position: relative;
     top: 1px;
@@ -177,3 +184,14 @@
         text-align: center;
         font-size: 1.75em;
     }
+@media only screen and (max-width: 768px) {
+   .container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+     margin-top: 116px;
+}
+}
+
+   
